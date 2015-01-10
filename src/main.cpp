@@ -13,6 +13,8 @@ GLFWwindow* window;
 #include <glm/glm.hpp>
 using namespace glm;
 
+#include <src/Cube.hpp>
+
 int main( void )
 {
 	int height, width;
@@ -57,15 +59,32 @@ int main( void )
 	// Ensure we can capture the escape key being pressed below
 	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
 	
-	// Light blue background
+	// Dark blue background
 	glClearColor(0.6f, 1.0f, 1.0f, 0.0f);
 
+	// Enable depth test
+	glEnable(GL_DEPTH_TEST);
+
+	// Accept fragment if it closer to the camera than the former one
+	glDepthFunc(GL_LESS);
+
+	// Cull triangles which normal is not towards the camera
+	glEnable(GL_CULL_FACE);
+	
+	Cube draw;
+	draw.init();
+
 	do{	
-		//Nothing at the moment
+		draw.setupDraw(window);	 
+		draw.draw;
+		draw.update(window);
 
 	} // Check if the ESC key was pressed or the window was closed
 	while( glfwGetKey(window, GLFW_KEY_ESCAPE ) != GLFW_PRESS &&
 		   glfwWindowShouldClose(window) == 0 );
+
+	// Cleanup VBO
+	draw.close();
 
 	// Close OpenGL window and terminate GLFW
 	glfwTerminate();
