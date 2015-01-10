@@ -76,8 +76,7 @@ int main( void )
 
 	do{	
 		draw.setupDraw(window);	 
-		draw.drawGround(20, 30); //Goes X then Z length. 
-		draw.drawHouse(7, 9);    //Goes X then Z length. Should be odd and both values greater than or equal to 5
+		draw.draw;
 		draw.update(window);
 
 	} // Check if the ESC key was pressed or the window was closed

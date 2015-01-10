@@ -9,9 +9,42 @@
 
  static GLfloat g_colour_buffer_data[12*3*3];  // Colours of ground blocks
  static const GLfloat g_vertex_buffer_data[] = { 
-		-1.0f, -1.0f, 0.0f,
-		 1.0f, -1.0f, 0.0f,
-		 0.0f,  1.0f, 0.0f,
+		-1.0f,-1.0f,-1.0f,
+		-1.0f,-1.0f, 1.0f,
+		-1.0f, 1.0f, 1.0f,
+		 1.0f, 1.0f,-1.0f,
+		-1.0f,-1.0f,-1.0f,
+		-1.0f, 1.0f,-1.0f,
+		 1.0f,-1.0f, 1.0f,
+		-1.0f,-1.0f,-1.0f,
+		 1.0f,-1.0f,-1.0f,
+		 1.0f, 1.0f,-1.0f,
+		 1.0f,-1.0f,-1.0f,
+		-1.0f,-1.0f,-1.0f,
+		-1.0f,-1.0f,-1.0f,
+		-1.0f, 1.0f, 1.0f,
+		-1.0f, 1.0f,-1.0f,
+		 1.0f,-1.0f, 1.0f,
+		-1.0f,-1.0f, 1.0f,
+		-1.0f,-1.0f,-1.0f,
+		-1.0f, 1.0f, 1.0f,
+		-1.0f,-1.0f, 1.0f,
+		 1.0f,-1.0f, 1.0f,
+		 1.0f, 1.0f, 1.0f,
+		 1.0f,-1.0f,-1.0f,
+		 1.0f, 1.0f,-1.0f,
+		 1.0f,-1.0f,-1.0f,
+		 1.0f, 1.0f, 1.0f,
+		 1.0f,-1.0f, 1.0f,
+		 1.0f, 1.0f, 1.0f,
+		 1.0f, 1.0f,-1.0f,
+		-1.0f, 1.0f,-1.0f,
+		 1.0f, 1.0f, 1.0f,
+		-1.0f, 1.0f,-1.0f,
+		-1.0f, 1.0f, 1.0f,
+		 1.0f, 1.0f, 1.0f,
+		-1.0f, 1.0f, 1.0f,
+		 1.0f,-1.0f, 1.0f
 	};
 
 void Cube::init()
@@ -22,13 +55,21 @@ void Cube::init()
 	programID = LoadShaders( "vertex.vs", "fragment.fs" );
 
 	// One color for each vertex. They were generated randomly.
-	for(int i = 0; i < 1*3; i++)
+	for(int i = 0; i < 12*3; i++)
 	{ 
-		g_colour_buffer_data[3*i+0] = 0.140f;
-		g_colour_buffer_data[3*i+1] = 0.059f;
-		g_colour_buffer_data[3*i+2] = 0.038f;		
+		if(i >= 27 && i <= 32) //Co-ordinates for the top of the triangle
+		{
+			g_colour_buffer_data[3*i+0] = 0.039f;
+			g_colour_buffer_data[3*i+1] = 0.186f;
+			g_colour_buffer_data[3*i+2] = 0.059f;
+		}
+		else	
+		{
+ 			g_colour_buffer_data[3*i+0] = 0.140f;
+			g_colour_buffer_data[3*i+1] = 0.059f;
+			g_colour_buffer_data[3*i+2] = 0.038f;
+		}		
 	};
-
 	// Get a handle for our "MVP" uniform
 	MatrixID = glGetUniformLocation(programID, "MVP");
 
@@ -48,6 +89,9 @@ void Cube::setupDraw(GLFWwindow* window)
 
 	// Use our shader
 	glUseProgram(programID);
+
+	// Compute the MVP matrix from keyboard and mouse input
+	computeMatricesFromInputs(window);
 
 	// 1rst attribute buffer : vertices
 	glEnableVertexAttribArray(0);

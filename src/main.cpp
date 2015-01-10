@@ -39,7 +39,7 @@ int main( void )
 	 width = mode->width;
 
 	// Open a window and create its OpenGL context
-	window = glfwCreateWindow( width/2, height/2, "Joshua's Cube World", NULL, NULL);
+	window = glfwCreateWindow( width, height, "Joshua's Cube World", glfwGetPrimaryMonitor(), NULL);
 
 	if( window == NULL ){
 		fprintf( stderr, "Failed to open GLFW window. If you have an Intel GPU, they are not 3.3 compatible. Try the 2.1 version of the tutorials.\n" );
