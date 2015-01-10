@@ -58,6 +58,9 @@ int main( void )
 
 	// Ensure we can capture the escape key being pressed below
 	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
+
+	//Hides the mouse cursor
+	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
 	
 	// Dark blue background
 	glClearColor(0.6f, 1.0f, 1.0f, 0.0f);
@@ -76,7 +79,8 @@ int main( void )
 
 	do{	
 		draw.setupDraw(window);	 
-		draw.draw;
+		draw.drawGround(20, 30); //Goes X then Z length. 
+		draw.drawHouse(7, 9);    //Goes X then Z length. Should be odd and both values greater than or equal to 5
 		draw.update(window);
 
 	} // Check if the ESC key was pressed or the window was closed

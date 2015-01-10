@@ -16,7 +16,8 @@ class Cube {
  public:
   void init(); 
   void setupDraw(GLFWwindow* window);
-  void draw();
+  void drawGround(float xLength, float zLength);
+  void drawHouse(float xLength, float zLength);
   void update(GLFWwindow* window);
   void close();
  private:
