@@ -6,7 +6,7 @@ To help create this project I followed a helpful tutorial on OpenGL:  http://www
 
 I also used a texture from this free image site:  http://freestocktextures.com/texture/id/703
 
-The project is a private version where, similarly to Minecraft, the entire world is constructed of cubes. It is a small world, containing only a large plan of grass with a small house sitting on top. There is no aim to this, no objective to follow, it is just a peaceful little world. 
+The is a small project, similarly to Minecraft, where the entire world is constructed of cubes. It is a small world, containing only a large plane of grass with a small house sitting on top. There is no aim to this project, no objective to follow, it is just a peaceful little world. 
 
 I created, worked in and compiled using Ubuntu so the steps I will provide you are designed to work within most Linux systems. You will need most OpenGL librarys, however the project does contain a few libraries to help with compiling. 
 
