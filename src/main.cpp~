@@ -13,7 +13,7 @@ GLFWwindow* window;
 #include <glm/glm.hpp>
 using namespace glm;
 
-#include <src/Cube.hpp
+#include <src/Cube.hpp>
 
 int main( void )
 {
@@ -69,7 +69,7 @@ int main( void )
 	glEnable(GL_DEPTH_TEST);
 
 	// Accept fragment if it closer to the camera than the former one
-	glDepthFunc(GL_LESS);
+	//glDepthFunc(GL_LESS);
 
 	// Cull triangles which normal is not towards the camera
 	glEnable(GL_CULL_FACE);

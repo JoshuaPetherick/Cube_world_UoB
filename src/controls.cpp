@@ -1,21 +1,21 @@
 
 #include "controls.hpp"
 
+
 using namespace glm;
 
- mat4 ViewMatrix;
- mat4 ProjectionMatrix;
+mat4 ViewMatrix;
+mat4 ProjectionMatrix;
 
- mat4 getViewMatrix(){
+mat4 getViewMatrix(){
 	return ViewMatrix;
 }
- mat4 getProjectionMatrix(){
+mat4 getProjectionMatrix(){
 	return ProjectionMatrix;
 }
 
-
 // Initial position : on +Z
-vec3 position = glm::vec3( 0, 2, 0 ); 
+glm::vec3 position = glm::vec3( 0, 2, 0 ); 
 // Initial horizontal angle : toward -Z
 float horizontalAngle = 3.14f;
 // Initial vertical angle : none
@@ -25,7 +25,6 @@ float initialFoV = 45.0f;
 
 float speed = 3.0f; // 3 units / second
 float mouseSpeed = 0.005f;
-
 
 void computeMatricesFromInputs(GLFWwindow* window){
 

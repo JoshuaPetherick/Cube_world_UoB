@@ -52,7 +52,6 @@ add_definitions(
 	-D_CRT_SECURE_NO_WARNINGS
 )
 
-# Tutorial 6
 add_executable(src
 	src/main.cpp
 	src/shader.cpp

@@ -22,6 +22,15 @@ class Cube {
   void close();
  private:
   void drawCube(float x, float y, float z);
+
+  GLuint VertexArrayID;
+  GLuint programID;
+  GLuint MatrixID;
+  GLuint vertexbuffer, elementbuffer;
+  GLuint colourbuffer, colourbuffer2;
+  GLuint elementbufferlength;
 };
+
+ 
 
 #endif 

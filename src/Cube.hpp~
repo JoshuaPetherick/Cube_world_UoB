@@ -1,6 +1,9 @@
 #ifndef CUBE_H
 #define CUBE_H
 
+// Include GLEW
+#include <GL/glew.h>
+
 // Include GLM
 #include <glm/glm.hpp>
 #include <glm/gtx/transform.hpp>
@@ -19,6 +22,14 @@ class Cube {
   void close();
  private:
   void drawCube(float x, float y, float z);
+
+  GLuint VertexArrayID;
+  GLuint programID;
+  GLuint MatrixID;
+  GLuint vertexbuffer, elementbufferlength;
+  GLuint colourbuffer, colourbuffer2;
 };
+
+ 
 
 #endif 

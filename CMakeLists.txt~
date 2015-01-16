@@ -59,10 +59,8 @@ add_executable(src
 	src/shader.hpp
 	src/controls.cpp
 	src/controls.hpp
-	src/GroundCube.hpp
-	src/GroundCube.cpp
-	src/HouseCube.hpp
-	src/HouseCube.cpp
+	src/Cube.hpp
+	src/Cube.cpp
 	
 	src/vertex.vs
 	src/fragment.fs
