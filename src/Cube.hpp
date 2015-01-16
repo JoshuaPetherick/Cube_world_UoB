@@ -10,7 +10,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 #include <src/shader.hpp>
-#include <src/controls.hpp>
+#include <src/camera.hpp>
 
 class Cube {
  public:

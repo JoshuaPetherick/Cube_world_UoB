@@ -4,6 +4,8 @@ This project was created for my semester one, year two, coursework for Game Deve
 
 To help create this project I followed a helpful tutorial on OpenGL:  http://www.opengl-tutorial.org/
 
+The site above is under the "DO WHAT THE F*** YOU WANT" license. 
+
 I also used a texture from this free image site:  http://freestocktextures.com/texture/id/703
 
 The is a small project, similarly to Minecraft, where the entire world is constructed of cubes. It is a small world, containing only a large plane of grass with a small house sitting on top. There is no aim to this project, no objective to follow, it is just a peaceful little world. 

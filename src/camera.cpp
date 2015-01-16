@@ -1,6 +1,5 @@
 
-#include "controls.hpp"
-
+#include "camera.hpp"
 
 using namespace glm;
 
@@ -14,7 +13,19 @@ mat4 getProjectionMatrix(){
 	return ProjectionMatrix;
 }
 
-void computeMatricesFromInputs(GLFWwindow* window){
+// Starting position of the camera
+glm::vec3 position = glm::vec3( 0, 2, 0 ); 
+// Starting horizontal angle, should be toward -Z
+float horizontalAngle = 3.14f;
+// Staring vertical angle, should be 0
+float verticalAngle = 0.0f;
+// Initial Field of View
+float initialFoV = 45.0f;
+
+float speed = 3.0f; // 3 units / second
+float mouseSpeed = 0.005f;
+
+void cameraControls(GLFWwindow* window){
 
 	// glfwGetTime is called only once, the first time this function is called
 	static double lastTime = glfwGetTime();
@@ -22,17 +33,24 @@ void computeMatricesFromInputs(GLFWwindow* window){
 	// Compute time difference between current and last frame
 	double currentTime = glfwGetTime();
 	float deltaTime = float(currentTime - lastTime);
+	
+	//Finds the primary monitors screen size
+	const GLFWvidmode * mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
 
-	// Get mouse position
+	//Sets the height and width to main monitors screen size
+	int height = mode->height;
+	int width = mode->width;
+
+	// Gets mouse position
 	double xpos, ypos;
 	glfwGetCursorPos(window, &xpos, &ypos);
 
-	// Reset mouse position for next frame
-	glfwSetCursorPos(window, 1024/2, 768/2);
+	// Resets mouse position, for next frame, in the center of the screen
+	glfwSetCursorPos(window, height/2, width/2);
 
-	// Compute new orientation
-	horizontalAngle += mouseSpeed/2 * float(1024/2 - xpos );
-	verticalAngle   += mouseSpeed/2 * float( 768/2 - ypos );
+	// Compute new orientation from mouse input
+	horizontalAngle += mouseSpeed/2 * float(height/2 - xpos );
+	verticalAngle   += mouseSpeed/2 * float( width/2 - ypos );
 
 	// Stops the camera from going upside down
 	if( verticalAngle < -0.9 )
@@ -90,7 +108,7 @@ void computeMatricesFromInputs(GLFWwindow* window){
 	ViewMatrix       = glm::lookAt(
 		position,           // Camera is here
 		position+direction, // and looks here : at the same position, plus "direction"
-		up                  // Head is up (set to 0,-1,0 to look upside-down)
+		up                  // Head is up
 				   );
 
 	// For the next frame, the "last time" will be "now"

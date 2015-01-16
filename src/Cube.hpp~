@@ -26,8 +26,9 @@ class Cube {
   GLuint VertexArrayID;
   GLuint programID;
   GLuint MatrixID;
-  GLuint vertexbuffer, elementbufferlength;
+  GLuint vertexbuffer, elementbuffer;
   GLuint colourbuffer, colourbuffer2;
+  GLuint elementbufferlength;
 };
 
  

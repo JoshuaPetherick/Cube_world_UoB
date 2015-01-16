@@ -56,8 +56,8 @@ add_executable(src
 	src/main.cpp
 	src/shader.cpp
 	src/shader.hpp
-	src/controls.cpp
-	src/controls.hpp
+	src/camera.cpp
+	src/camera.hpp
 	src/Cube.hpp
 	src/Cube.cpp
 	
