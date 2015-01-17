@@ -11,6 +11,7 @@
 
 #include <src/shader.hpp>
 #include <src/camera.hpp>
+#include <src/texture.hpp>
 
 class Cube {
  public:
@@ -24,10 +25,12 @@ class Cube {
   void drawCube(float x, float y, float z);
 
   GLuint VertexArrayID;
-  GLuint programID;
+  GLuint programID, programID2;
   GLuint MatrixID;
   GLuint vertexbuffer, elementbuffer;
   GLuint colourbuffer, colourbuffer2;
+  GLuint uvbuffer;
+  GLuint Texture, TextureID;
   GLuint elementbufferlength;
 };
 

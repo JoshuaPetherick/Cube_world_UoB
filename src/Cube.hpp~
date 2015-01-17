@@ -9,8 +9,9 @@
 #include <glm/gtx/transform.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
-#include <src/shader.hpp>
-#include <src/controls.hpp>
+#include <shaders/shader.hpp>
+#include <src/camera.hpp>
+#include <src/texture.hpp>
 
 class Cube {
  public:
@@ -24,10 +25,12 @@ class Cube {
   void drawCube(float x, float y, float z);
 
   GLuint VertexArrayID;
-  GLuint programID;
+  GLuint programID, programID2;
   GLuint MatrixID;
   GLuint vertexbuffer, elementbuffer;
   GLuint colourbuffer, colourbuffer2;
+  GLuint uvbuffer;
+  GLuint Texture, TextureID;
   GLuint elementbufferlength;
 };
 

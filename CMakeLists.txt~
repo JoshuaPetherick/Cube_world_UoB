@@ -54,15 +54,17 @@ add_definitions(
 
 add_executable(src
 	src/main.cpp
-	src/shader.cpp
-	src/shader.hpp
-	src/controls.cpp
-	src/controls.hpp
+	src/camera.cpp
+	src/camera.hpp
 	src/Cube.hpp
 	src/Cube.cpp
-	
-	src/vertex.vs
-	src/fragment.fs
+	src/texture.hpp
+	src/texture.cpp
+
+	shaders/shader.cpp
+	shaders/shader.hpp
+	shaders/vertex.vs
+	shaders/fragment.fs
 )
 target_link_libraries(src
 	${ALL_LIBS}

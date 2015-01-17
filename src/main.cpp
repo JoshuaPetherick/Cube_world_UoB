@@ -64,7 +64,7 @@ int main( void )
 	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
 	
 	// Light blue background
-	glClearColor(0.6f, 1.0f, 1.0f, 0.0f);
+	glClearColor(0.6f, 1.0f, 1.0f, 0.1f);
 
 	// Enable depth test
 	glEnable(GL_DEPTH_TEST);

@@ -60,7 +60,9 @@ add_executable(src
 	src/camera.hpp
 	src/Cube.hpp
 	src/Cube.cpp
-	
+	src/texture.hpp
+	src/texture.cpp
+
 	src/vertex.vs
 	src/fragment.fs
 )
