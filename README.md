@@ -22,11 +22,7 @@ You can run this project by following these steps:
 
 -   cmake ..       (There is a cmake file in the folder above, type this to run it)
 
-<<<<<<< HEAD
--   make all       (This compiles everything, do this if you've altered the project)
-=======
 -   make all       (This compiles everything, do this once you've altered the project)
->>>>>>> origin/master
 
 -   cd ..          (Head back up into the Fakecraft Directory)
 
